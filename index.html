@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#282c24"/>
+  <meta name="description" content="Red Earth — เกม FPS ออนไลน์ในสะวันนาสมมติ เล่นกับเพื่อนด้วยรหัสห้อง"/>
+  <title>RED EARTH — Savanna Outpost</title>
+</head>
+<body>
+  <div id="world" aria-label="ฉากเกมสามมิติ"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div id="smoke-screen" hidden aria-hidden="true"></div>
+  <div id="scope-overlay" aria-hidden="true"><div class="scope-lens"><div class="reticle-h"></div><div class="reticle-v"></div><div class="reticle-dot"></div><div class="reticle-marks"><i></i><i></i><i></i><i></i></div><span id="scope-zoom">3.2×</span><span id="scope-name">LONGBOW .308</span></div></div>
+  <header id="topbar"><a class="wordmark" href="/" aria-label="Red Earth หน้าหลัก"><svg width="24" height="26" viewBox="0 0 24 26" fill="none" aria-hidden="true"><path d="M3 23V3h9l8 7-8 7H8l12 6M8 8v4h4l3-2-3-2H8Z" stroke="currentColor" stroke-width="2"/></svg>RED EARTH</a><div class="top-right"><span class="status-dot"></span><span id="connection-label">พื้นที่พร้อมสำรวจ</span><button id="settings-button" class="icon-button" aria-label="ตั้งค่า" title="ตั้งค่า"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3" fill="#282c24"/><circle cx="15" cy="17" r="3" fill="#282c24"/></svg></button></div></header>
+  <main id="lobby">
+    <div class="lobby-content">
+      <h1>RED<br/><span>EARTH</span><i>.</i></h1>
+      <p class="intro">แสงสุดท้ายเหนือสะวันนา<br/>ทุกนัดมีความหมาย</p>
+      <form id="join-form">
+        <div class="fields"><label>ชื่อผู้เล่น<input id="callsign" maxlength="18" placeholder="RANGER" autocomplete="nickname" required value="Ranger"/></label><label>รหัสห้อง<input id="room-code" maxlength="16" value="SAVANNA" autocomplete="off" spellcheck="false" required/></label></div>
+        <div class="loadout-fields"><label>อาวุธหลัก<select id="primary-weapon"></select></label><label>อาวุธรอง<select id="secondary-weapon"></select></label></div><p id="weapon-description" class="weapon-description"></p>
+        <div class="loadout-fields"><label>สกิล Q<select id="skill-slot-1"></select></label><label>สกิล E<select id="skill-slot-2"></select></label></div><p class="weapon-description">เลือกสกิลติดตัว 2 อย่าง · อัลติแยกตามตัวละคร</p><label class="operator-field">ตัวละคร<select id="character-select"></select></label>
+        <button class="deploy" id="deploy" type="submit"><span>เข้าสู่สนาม</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
+        <p class="form-note" id="join-note" role="status">เล่นกับเพื่อนโดยใช้รหัสห้องเดียวกัน · สูงสุด 8 คน</p>
+      </form>
+      <div class="lobby-details"><span>FREE-FOR-ALL</span><span>ฝึกยิงได้เมื่ออยู่คนเดียว</span></div>
+    </div>
+    <section class="operator-preview" aria-label="ตัวอย่างตัวละครสามมิติ"><div id="operator-stage"></div><div class="operator-caption"><strong id="operator-name">NOVA · 28 ปี</strong><p id="operator-description"></p></div></section>
+    <div class="location"><span class="location-line"></span><div><strong>SAVANNA OUTPOST</strong><p>สะวันนาแอฟริกา · พื้นที่สมมติ</p><span>17:42 &nbsp; / &nbsp; DRY SEASON</span></div></div>
+    <footer class="lobby-footer"><span>เกมต้นแบบ 3D · คอมพิวเตอร์ / เมาส์และคีย์บอร์ด</span><button id="mouse-settings" type="button">ความไวเมาส์</button><button id="help-button">วิธีเล่น <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button></footer>
+  </main>
+  <section id="hud" hidden aria-label="ข้อมูลผู้เล่น">
+    <div id="compass"><b id="heading">000° N</b></div>
+    <div class="session"><strong id="room-label">SAVANNA</strong><span id="player-count">1 / 8 ผู้เล่น</span><button id="share-room" title="คัดลอกลิงก์ห้อง">คัดลอกลิงก์ห้อง</button></div>
+    <div id="crosshair" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div id="hitmarker" aria-hidden="true"></div>
+    <div id="kill-banner" aria-live="polite"><svg width="38" height="38" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 3 42 14v20L24 45 6 34V14L24 3Z" stroke="currentColor" stroke-width="2"/><path d="m15 16 18 17M33 16 15 33M18 9l6 5 6-5" stroke="currentColor" stroke-width="2"/></svg><div><strong id="kill-title">ELIMINATED</strong><span id="kill-victim"></span></div><small id="kill-weapon"></small></div>
+    <div id="kill-feed" aria-live="polite"></div><div id="notice" role="status"></div>
+    <div id="health-panel"><div class="health-label"><span>สุขภาพ</span><strong id="health">100</strong></div><div class="health-track"><div id="health-fill"></div></div><span id="shield-status"></span><span id="stance">ยืน</span></div>
+    <div id="ammo-panel"><span id="weapon-name">AR-4 / 5.56</span><div><strong id="ammo">30</strong><span id="mag-size">/ 30</span></div><small id="reload-label">R เพื่อรีโหลด</small></div>
+    <div id="grenade-count">G ระเบิด × 2</div><div class="bottom-hints"><span><kbd>W A S D</kbd> เคลื่อนที่</span><span><kbd>SPACE</kbd> กระโดด</span><span><kbd>SHIFT</kbd> วิ่ง</span><span><kbd>C</kbd> ย่อตัว</span><span><kbd>1 / 2 / 3</kbd> อาวุธ</span><span><kbd>G</kbd> ระเบิด</span><span><kbd>TAB</kbd> คะแนน</span><span><kbd>ESC</kbd> พัก</span></div>
+    <div id="field-kit"><strong id="perk-name"></strong><span id="perk-description"></span><small id="perk-roll">B สุ่มสกิลปืนใหม่</small><p id="vehicle-status">H ขึ้นรถเมื่ออยู่ใกล้รถ</p></div><div id="ultimate-panel"><kbd>T</kbd><div><strong id="ultimate-title">OVERDRIVE</strong><span id="ultimate-status">0 / 5 KILLS</span></div><div class="ult-track"><i id="ultimate-meter"></i></div></div><div id="skill-bar" aria-label="สกิล"><div id="skill-dash"><kbd>Q</kbd><span>พุ่งตัว</span><small>พร้อม</small></div><div id="skill-smoke"><kbd>E</kbd><span>ม่านควัน</span><small>พร้อม</small></div><div id="skill-heal"><kbd>F</kbd><span>ฟื้นฟู</span><small>พร้อม</small></div><div id="skill-wall"><kbd>X</kbd><span>ไอซ์วอลล์</span><small>พร้อม</small></div></div>
+    <div id="damage" aria-hidden="true"></div>
+  </section>
+  <section id="pause" class="overlay" hidden><div class="pause-content"><h2 id="pause-title">หยุดพัก</h2><p id="pause-copy">คลิกเพื่อกลับเข้าสู่สนาม</p><button id="resume" class="deploy">กลับเข้าเกม <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button><button id="leave" class="text-button">ออกจากห้อง</button></div></section>
+  <section id="death" class="overlay" hidden><div><h2>คุณถูกยิง</h2><p>กลับเข้าสนามใน <strong id="respawn-time">4</strong> วินาที</p></div></section>
+  <section id="scoreboard" hidden><h2>คะแนนในห้อง</h2><div class="score-row score-head"><span>ผู้เล่น</span><span>สังหาร</span><span>เสียชีวิต</span></div><div id="score-rows"></div></section>
+  <dialog id="settings"><form method="dialog"><div class="dialog-header"><h2>ตั้งค่าการเล่น</h2><button class="icon-button close-dialog" aria-label="ปิด"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div><label class="setting">ความไวเมาส์ <output id="sensitivity-value">1.0</output><input id="sensitivity" type="range" min="0.05" max="4" step="0.05" value="1"/></label><label class="setting">ความไวขณะเล็ง <output id="ads-sensitivity-value">1.00×</output><input id="ads-sensitivity" type="range" min="0.1" max="2" step="0.05" value="1"/></label><button id="reset-mouse" type="button" class="text-button">คืนค่าความไวเมาส์</button><label class="setting">ระดับเสียง <output id="volume-value">60%</output><input id="volume" type="range" min="0" max="100" value="60"/></label><label class="setting">คุณภาพภาพ<select id="quality"><option value="high">สูง — เงาและรายละเอียดเต็ม</option><option value="low">ประหยัด — เพิ่มความลื่นไหล</option></select></label><label class="check-setting"><input id="motion" type="checkbox"/> ลดการสั่นและการเคลื่อนไหวกล้อง</label><button class="deploy">บันทึกและปิด</button></form></dialog>
+  <dialog id="help"><form method="dialog"><div class="dialog-header"><h2>พร้อมเข้าสนาม</h2><button class="icon-button" aria-label="ปิด"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div><p>เปิดลิงก์เดียวกันกับเพื่อน แล้วใส่รหัสห้องให้ตรงกัน ทุกคนในห้องเป็นคู่ต่อสู้ หากอยู่คนเดียวจะมีเป้าฝึกยิงในฐาน</p><dl><div><dt>W A S D</dt><dd>เดิน</dd></div><div><dt>เมาส์</dt><dd>มองไปรอบตัว</dd></div><div><dt>คลิกซ้าย / ขวา</dt><dd>ยิง / เล็งผ่านศูนย์</dd></div><div><dt>Shift / C</dt><dd>วิ่ง / ย่อตัว</dd></div><div><dt>R / Tab / Esc</dt><dd>รีโหลด / คะแนน / พัก</dd></div></dl><p class="help-note">B สุ่มสกิลปืน (8 วินาที) · H ขึ้น/ลงรถ · WASD ขับรถ · สกอลล์เมาส์สลับปืนหลัก–รอง–มีด · T อัลติเมื่อสะสมคิลผู้เล่นครบ 5 คน (ไม่รวมเป้าฝึก) · X สร้างไอซ์วอลล์ 450 HP อยู่ 20 วินาที (คูลดาวน์ 4 วินาที) · RPG ยิงจรวดติดตามเป้าด้านหน้า เลือกได้ในคลัง · Space กระโดด · Q พุ่งตามทิศเดิน (12 วินาที) · E ควันระยะใกล้ 8 วินาที (คูลดาวน์ 18 วินาที) · F ฟื้นฟูสูงสุด 36 HP ใน 3 วินาที หยุดเมื่อถูกยิง (คูลดาวน์ 25 วินาที) · คลิกขวาค้างหรือกด Z เพื่อสลับการเล็ง · มีดไม่สามารถเล็งได้ · เลือกปืนหลักและรองได้จากปืน 12 แบบ กด 1 / 2 เพื่อสลับปืน กด 3 หรือ V เพื่อใช้มีดระยะประชิด กด G ขว้างระเบิด (2 ลูกต่อชีวิต ระเบิดใน 2.8 วินาที ทำร้ายตัวเองได้) เป้าฝึกจะตั้งขึ้นใหม่อัตโนมัติ ผู้เล่นเกิดใหม่มีเวลาโล่อมตะ 3 วินาที การยิงจะยกเลิกคุ้มกัน</p><button class="deploy">เข้าใจแล้ว</button></form></dialog>
+  <div id="unsupported" hidden><h2>ต้องใช้คอมพิวเตอร์เพื่อเล่น</h2><p>เกมนี้ใช้เมาส์และคีย์บอร์ด กรุณาเปิดบนคอมพิวเตอร์ที่รองรับ WebGL 2</p></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

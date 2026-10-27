@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-27T06:43:51.196680+00:00",
+  "title": "Design System: RED EARTH",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Muted Orange",
+        "canonical": "#e4a260",
+        "tonalRamp": [
+          "oklch(15% 0.0439 64.6)",
+          "oklch(27% 0.0649 64.6)",
+          "oklch(39% 0.0860 64.6)",
+          "oklch(51% 0.1070 64.6)",
+          "oklch(63% 0.1000 64.6)",
+          "oklch(75% 0.0790 64.6)",
+          "oklch(87% 0.0579 64.6)",
+          "oklch(95% 0.0439 64.6)"
+        ]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Sunlit Orange",
+        "canonical": "#f0bd83",
+        "tonalRamp": [
+          "oklch(15% 0.0365 69.5)",
+          "oklch(27% 0.0540 69.5)",
+          "oklch(39% 0.0714 69.5)",
+          "oklch(51% 0.0889 69.5)",
+          "oklch(63% 0.0831 69.5)",
+          "oklch(75% 0.0656 69.5)",
+          "oklch(87% 0.0481 69.5)",
+          "oklch(95% 0.0365 69.5)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Bone Ink",
+        "canonical": "#f3f0df",
+        "tonalRamp": [
+          "oklch(15% 0.0087 98.6)",
+          "oklch(27% 0.0129 98.6)",
+          "oklch(39% 0.0171 98.6)",
+          "oklch(51% 0.0213 98.6)",
+          "oklch(63% 0.0199 98.6)",
+          "oklch(75% 0.0157 98.6)",
+          "oklch(87% 0.0115 98.6)",
+          "oklch(95% 0.0087 98.6)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Olive Foreground",
+        "canonical": "#c7cabc",
+        "tonalRamp": [
+          "oklch(15% 0.0075 116.6)",
+          "oklch(27% 0.0110 116.6)",
+          "oklch(39% 0.0146 116.6)",
+          "oklch(51% 0.0182 116.6)",
+          "oklch(63% 0.0170 116.6)",
+          "oklch(75% 0.0134 116.6)",
+          "oklch(87% 0.0099 116.6)",
+          "oklch(95% 0.0075 116.6)"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Dark Earth",
+        "canonical": "#252b23",
+        "tonalRamp": [
+          "oklch(15% 0.0064 137.9)",
+          "oklch(27% 0.0095 137.9)",
+          "oklch(39% 0.0126 137.9)",
+          "oklch(51% 0.0157 137.9)",
+          "oklch(63% 0.0146 137.9)",
+          "oklch(75% 0.0116 137.9)",
+          "oklch(87% 0.0085 137.9)",
+          "oklch(95% 0.0064 137.9)"
+        ]
+      },
+      "action-ink": {
+        "role": "neutral",
+        "displayName": "Deep Earth Ink",
+        "canonical": "#24291f",
+        "tonalRamp": [
+          "oklch(15% 0.0074 129.3)",
+          "oklch(27% 0.0110 129.3)",
+          "oklch(39% 0.0146 129.3)",
+          "oklch(51% 0.0181 129.3)",
+          "oklch(63% 0.0169 129.3)",
+          "oklch(75% 0.0134 129.3)",
+          "oklch(87% 0.0098 129.3)",
+          "oklch(95% 0.0074 129.3)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Translucent Bone Rule",
+        "canonical": "#f3f0df30",
+        "tonalRamp": [
+          "oklch(15% 0.0087 98.6)",
+          "oklch(27% 0.0129 98.6)",
+          "oklch(39% 0.0171 98.6)",
+          "oklch(51% 0.0213 98.6)",
+          "oklch(63% 0.0199 98.6)",
+          "oklch(75% 0.0157 98.6)",
+          "oklch(87% 0.0115 98.6)",
+          "oklch(95% 0.0087 98.6)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Condensed Display",
+        "purpose": "Title and Latin display."
+      },
+      "body": {
+        "displayName": "Thai Text",
+        "purpose": "Readable Thai instructions and introductory copy."
+      }
+    },
+    "shadows": [
+      {
+        "name": "world-text",
+        "value": "0 2px 8px #172016aa",
+        "purpose": "Text contrast over live scenery."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Action response."
+      },
+      {
+        "name": "action-duration",
+        "value": "0.2s",
+        "purpose": "Button background and movement."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-width",
+        "value": "900px"
+      },
+      {
+        "name": "compact-height",
+        "value": "740px"
+      },
+      {
+        "name": "narrow-styles",
+        "value": "600px"
+      },
+      {
+        "name": "minimum-play-width",
+        "value": "650px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Full-width deployment or confirmation action.",
+      "html": "<button class=\"ds-primary\">เข้าสู่สนาม<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-primary{display:flex;justify-content:space-between;align-items:center;gap:24px;width:100%;padding:17px 22px;background:var(--accent,#e4a260);color:#24291f;border:0;border-radius:0;font:600 15px Thai,Segoe UI,sans-serif;cursor:pointer;transition:background .2s,transform .2s cubic-bezier(.16,1,.3,1)}.ds-primary:hover{background:#f0bd83;transform:translateY(-1px)}.ds-primary:active{transform:translateY(1px)}.ds-primary:disabled{opacity:.6;cursor:wait}.ds-primary:focus-visible{outline:2px solid var(--accent,#e4a260);outline-offset:5px}"
+    },
+    {
+      "name": "Ghost Action",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary exit or help action.",
+      "html": "<button class=\"ds-ghost\">ออกจากห้อง</button>",
+      "css": ".ds-ghost{border:0;background:transparent;color:var(--ink,#f3f0df);padding:10px 0;font:12px Thai,Segoe UI,sans-serif;cursor:pointer}.ds-ghost:hover{color:var(--accent,#e4a260)}.ds-ghost:focus-visible{outline:2px solid var(--accent,#e4a260);outline-offset:5px}"
+    },
+    {
+      "name": "Room Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Transparent underline field and compact label.",
+      "html": "<label class=\"ds-field\">รหัสห้อง<input value=\"SAVANNA\" maxlength=\"16\"/></label>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:7px;color:var(--muted,#c7cabc);font:11px Thai,Segoe UI,sans-serif}.ds-field input{padding:9px 0 11px;border:0;border-bottom:1px solid #f3f0df60;background:transparent;border-radius:0;color:var(--ink,#f3f0df);font:14px Segoe UI,sans-serif;letter-spacing:.04em;caret-color:var(--accent,#e4a260)}.ds-field input:hover,.ds-field input:focus{border-bottom-color:var(--accent,#e4a260)}.ds-field input:focus-visible{outline:2px solid var(--accent,#e4a260);outline-offset:5px}"
+    },
+    {
+      "name": "Wordmark Navigation",
+      "kind": "nav",
+      "description": "Compact Latin wordmark returning to the lobby.",
+      "html": "<a class=\"ds-nav\" href=\"#\">RED EARTH</a>",
+      "css": ".ds-nav{display:inline-flex;align-items:center;gap:11px;color:var(--ink,#f3f0df);text-decoration:none;font:700 20px Barlow,sans-serif;letter-spacing:.11em}.ds-nav:hover{color:var(--accent,#e4a260)}.ds-nav:focus-visible{outline:2px solid var(--accent,#e4a260);outline-offset:5px}"
+    },
+    {
+      "name": "Session Panel",
+      "kind": "custom",
+      "description": "Room and player count on a contrast ground.",
+      "html": "<section class=\"ds-session\"><strong>SAVANNA</strong><span>1 / 8 ผู้เล่น</span><button>คัดลอกลิงก์ห้อง</button></section>",
+      "css": ".ds-session{display:flex;flex-direction:column;gap:5px;background:#252b23bd;padding:12px 15px;min-width:150px;color:var(--ink,#f3f0df)}.ds-session strong{font:700 19px Barlow,sans-serif;letter-spacing:.1em}.ds-session span{font:11px Thai,Segoe UI,sans-serif;color:#e3e4d5}.ds-session button{font:10px Thai,Segoe UI,sans-serif;color:var(--ink,#f3f0df);background:transparent;border:0;padding:8px 0;text-align:left;text-decoration:underline;text-underline-offset:4px;cursor:pointer}.ds-session button:hover{color:var(--accent,#e4a260)}.ds-session button:focus-visible{outline:2px solid var(--accent,#e4a260);outline-offset:5px}"
+    },
+    {
+      "name": "Weapon select",
+      "kind": "input",
+      "description": "Two equipped gun slots use the existing dark earth square control language.",
+      "html": "<label class=\"ds-loadout\">อาวุธหลัก<select><option>AR-4 — ปืนจู่โจม</option><option>LONGBOW .308 — สไนเปอร์</option></select></label>",
+      "css": ".ds-loadout{display:block;color:#c7cabc;font:11px sans-serif}.ds-loadout select{display:block;margin-top:6px;width:100%;border:1px solid #f3f0df45;background:#252b23ed;color:#f3f0df;font:11px sans-serif;padding:10px 8px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Savanna Observation Point",
+    "overview": "The environment carries atmosphere: dusty red ground, dry grass, olive foliage and a pale sky. The interface uses bone-colored text and muted orange actions over dark earth surfaces. Its character comes from the world being rendered, rather than ornament added around it.\n\nCondensed Latin display lettering gives the title and game numerals a clear silhouette. Thai instructions remain plain and readable. This documents the implemented procedural prototype; it does not claim a photorealistic asset pipeline.",
+    "keyCharacteristics": [
+      "Live environmental depth.",
+      "Square, restrained controls.",
+      "Warm action color against dark earth surfaces.",
+      "Thai instructions paired with condensed Latin display lettering."
+    ],
+    "rules": [
+      {
+        "name": "The Contrast Ground Rule",
+        "body": "Place readable foregrounds over the dark earth panel or the established scene shading whenever the sky or terrain would compromise them.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Use the condensed face for Latin display and game numerals; use the Thai text stack for instructions and controls.",
+        "section": "typography"
+      },
+      {
+        "name": "The World Depth Rule",
+        "body": "Keep environmental depth in the renderer and interface separation in tonal layers.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the dark earth contrast ground over changing scenery.",
+      "Do use authored SVG icons and visible keyboard focus.",
+      "Do retain the reduced-motion option for idle camera drift and head bob.",
+      "Do keep procedural-prototype limitations explicit when describing the visuals."
+    ],
+    "donts": [
+      "Don't substitute decorative interface panels for environmental detail.",
+      "Don't show fixed compass labels that contradict the current bearing.",
+      "Don't imply mobile gameplay where the implementation only offers a support message."
+    ]
+  }
+}
